@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Roboto:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Luxurious Roman', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url(istockphoto-1171481416-1024x1024.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95vh;
+}
+
+.main-container{
+    background-color: rgba(21, 21, 21, 0.93);
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 0 8px gray;
+    border-radius: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.circle{
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    color: gray;
+    box-shadow: 0px 0px 3px white;
+}
+
+.line{
+    height: 2px;
+    width: 0;
+    background-color: black;
+}
+
+
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    padding: 10px 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    border: 2px solid #0456c8;
+}
+
+button:hover {
+    box-shadow: 0 0 3px #ddd;
+    cursor: pointer;
+}
+
+.one,
+.two,
+.three{
+    transition: 0.5s ease-in;
+    box-shadow: 0px 0px 3px white;
+}
+
+.input-container{
+    width: 100%;
+}
+
+.first-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    color: white;
+}
+
+.first-page input{
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 70%;
+    border-radius: 20px;
+}
+
+.first-page label,
+.second-page label,
+.third-page label{
+    margin-bottom: 5px;
+}
+
+.second-page{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    color: white;
+    height: 270px;
+}
+
+.second-page select{
+    width: 70%;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.second-page input,
+.third-page input{
+    width: 70%;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.third-page input{
+    margin-bottom: 50px;
+}
+
+#country{
+    margin-bottom: 10px;
+}
+
+.name,
+.last-name,
+.email,
+.country-div {
+    opacity: 0;
+    margin-bottom: 20px;
+    color: #e23636;
+}
+
+.third-page{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    color: white;
+    height: 270px;
+}

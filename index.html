@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="input-container">
+            <div class="first-page">
+                <label for="name">Enter your first name</label>
+                <input type="text" name="name">
+                <div class="name"></div>
+                <label for="surname">Enter your last name</label>
+                <input type="text" name="surname">
+                <div class="last-name"></div>
+                <label for="email">Enter your email</label>
+                <input type="email" name="email">
+                <div class="email"></div>
+            </div>
+            <div class="second-page">
+                <label for="country">Select your country</label>
+                <select name="country" id="country">
+                    <option value="">Choose Option</option>
+                    <option value="serbia">Serbia</option>
+                    <option value="montenegro">Montenegro</option>
+                    <option value="russia">Russia</option>
+                    <option value="greece">Greece</option>
+                </select>
+                <div class="country-div"></div>
+                <label for="city">Select your city</label>
+                <select name="city" id="city">
+                    
+                </select>
+                <label for="zip">Enter ZIP code</label>
+                <input type="text" name="zip">
+            </div>
+            <div class="third-page">
+                <label for="username">Choose your username</label>
+                <input type="text" name="username">
+                <label for="password">Choose your password</label>
+                <input type="password" name="password">
+            </div>
+        </div>
+        <div class="container">
+            <div class="circle border-one">1</div>
+            <div class="line one"></div>
+            <div class="circle left border-two">2</div>
+            <div class="line two"></div>
+            <div class="circle left border-three">3</div>
+            <div class="line three"></div>
+            <div class="circle left border-four">4</div>
+        </div>
+        <div class="buttons">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
