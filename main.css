@@ -178,3 +178,7 @@ button:hover {
     color: white;
     height: 270px;
 }
+
+.after-submit{
+    display: none;
+}

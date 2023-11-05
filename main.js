@@ -12,6 +12,9 @@ let page1 = document.querySelector('.first-page');
 let page2 = document.querySelector('.second-page');
 let page3 = document.querySelector('.third-page');
 let page4 = document.querySelector('.fourth-page');
+let mainContainer = document.querySelector('.main-container');
+let mainDisplay = document.querySelector('.after-submit');
+let body = document.querySelector('body');
 
 let nameInput = document.querySelector('input[name="name"]');
 let lastNameInput = document.querySelector('input[name="surname"]');
@@ -32,7 +35,7 @@ let passwordDiv = document.querySelector('.pass');
 let lastName = document.querySelector('.last-name');
 let email = document.querySelector('.email');
 
-
+let proceed = document.querySelector('.submit');
 
 let counter = 0;
 const citiesByCountry = {
@@ -220,8 +223,23 @@ function nextPageHandler() {
 }
 
 function secondPageHandler() {
-    counter++;
-    displayPageThree();
+    if (username.value === "") {
+        usernameDiv.style.opacity = 1;
+        usernameDiv.innerHTML = "Username field required"
+        return;
+    } else {
+        usernameDiv.style.opacity = 0;
+    }
+    
+    if (password.value === ""){
+        passwordDiv.style.opacity = 1;
+        passwordDiv.innerHTML = "Password field required";
+        return;
+    } else {
+        passwordDiv.style.opacity = 0;
+        counter++;
+        displayPageThree();
+    }
 }
 
 
@@ -236,25 +254,8 @@ function displayPageTwo() {
                 page2.style.display = "none";
                 page3.style.display = "flex";
             }, 300)
-            if (username.value === "") {
-                usernameDiv.style.opacity = 1;
-                usernameDiv.innerHTML = "Username field required"
-                return;
-            } else {
-                usernameDiv.style.opacity = 0;
-            }
-            
-            if (password.value === ""){
-                passwordDiv.style.opacity = 1;
-                passwordDiv.innerHTML = "Password field required";
-                return;
-            } else {
-                passwordDiv.style.opacity = 0;
-            }
-        
-            if (username.value != "" && password.value != "") {
-                next.addEventListener('click', secondPageHandler)
-            }
+
+            next.addEventListener('click', secondPageHandler)
 }
 
 function displayPageThree() {
@@ -270,3 +271,11 @@ function displayPageThree() {
     }, 300)
     next.style.opacity = 0.5;
 }
+
+proceed.addEventListener('click', function () {
+    setTimeout(() => {
+        body.style.background = "transparent";
+        mainContainer.style.display = "none";
+        mainDisplay.style.display = "block";
+    }, 500)
+})
