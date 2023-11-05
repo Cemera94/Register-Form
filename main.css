@@ -136,10 +136,6 @@ button:hover {
     border-radius: 20px;
 }
 
-.third-page input{
-    margin-bottom: 50px;
-}
-
 #country{
     margin-bottom: 10px;
 }
@@ -147,7 +143,9 @@ button:hover {
 .name,
 .last-name,
 .email,
-.country-div {
+.country-div,
+.username,
+.pass {
     opacity: 0;
     margin-bottom: 20px;
     color: #e23636;
@@ -158,6 +156,24 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 100px;
+    color: white;
+    height: 270px;
+}
+
+.third-page input{
+    margin-bottom: 10px;
+}
+
+.username{
+    margin-bottom: 30px;
+}
+
+.fourth-page{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     margin-bottom: 100px;
     color: white;
     height: 270px;

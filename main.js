@@ -8,13 +8,17 @@ let circle2 = document.querySelector('.border-two');
 let circle3 = document.querySelector('.border-three');
 let circle4 = document.querySelector('.border-four');
 
-let page2 = document.querySelector('.second-page');
 let page1 = document.querySelector('.first-page');
+let page2 = document.querySelector('.second-page');
 let page3 = document.querySelector('.third-page');
+let page4 = document.querySelector('.fourth-page');
 
 let nameInput = document.querySelector('input[name="name"]');
 let lastNameInput = document.querySelector('input[name="surname"]');
 let emailInput = document.querySelector('input[name="email"]');
+let username = document.querySelector('input[name="username"]');
+let password = document.querySelector('input[name="password"]');
+
 
 let countrySelect = document.querySelector('#country');
 countryValue = "";
@@ -23,6 +27,8 @@ let countryDiv = document.querySelector('.country-div')
 
 
 let name = document.querySelector('.name');
+let usernameDiv = document.querySelector('.username');
+let passwordDiv = document.querySelector('.pass');
 let lastName = document.querySelector('.last-name');
 let email = document.querySelector('.email');
 
@@ -45,13 +51,14 @@ circle1.style.color = "white";
 
 
 
-prev.addEventListener('click', function () {
+prev.addEventListener('click', function prevClick() {
     if (counter > 0) {
         prev.disabled = false;
         counter--
         showBtnNext();
         
         if (counter === 0) {
+            next.addEventListener('click', nextClick)
             prev.style.opacity = 0.5;
             counter = 0;
             line1.style.width = "0px"
@@ -82,13 +89,17 @@ prev.addEventListener('click', function () {
                 circle4.style.opacity = 0.7;
                 circle4.style.color = "gray";
                 circle4.style.transition = "0.3s ease-in"
+                page4.style.display = "none";
+                page3.style.display = "flex";
             },300)
         }
     }
+    console.log(counter);
 })
 
-next.addEventListener('click', function nextClick() {
+next.addEventListener('click', nextClick);
 
+function nextClick() {
     if (counter === 0) {
         let emailParts = emailInput.value.split('@');
         let emailSecondPart = emailParts[1];
@@ -135,23 +146,9 @@ next.addEventListener('click', function nextClick() {
             showBtn();
             displayPageOne();
         }
-
     }
-        
-             
-        /* if (counter === 3){
-            line3.style.width = "100px"
-            line3.style.background = "#0456c8";
-            setTimeout(() => {
-                circle4.style.border = "2px solid #0456c8"
-                circle4.style.opacity = 1;
-                circle4.style.color = "white";
-                circle4.style.transition = "0.3s ease-in";
-            }, 300) 
-            next.style.opacity = 0.5;
-            counter = 3;
-    } */
-})
+
+}
 
 
 
@@ -169,6 +166,8 @@ function showBtnNext() {
 
 
 function displayPageOne() {
+
+
     line1.style.width = "100px"
     line1.style.background = "#0456c8";
             
@@ -220,6 +219,11 @@ function nextPageHandler() {
     displayPageTwo();
 }
 
+function secondPageHandler() {
+    counter++;
+    displayPageThree();
+}
+
 
 function displayPageTwo() {
     line2.style.width = "100px"
@@ -232,4 +236,37 @@ function displayPageTwo() {
                 page2.style.display = "none";
                 page3.style.display = "flex";
             }, 300)
+            if (username.value === "") {
+                usernameDiv.style.opacity = 1;
+                usernameDiv.innerHTML = "Username field required"
+                return;
+            } else {
+                usernameDiv.style.opacity = 0;
+            }
+            
+            if (password.value === ""){
+                passwordDiv.style.opacity = 1;
+                passwordDiv.innerHTML = "Password field required";
+                return;
+            } else {
+                passwordDiv.style.opacity = 0;
+            }
+        
+            if (username.value != "" && password.value != "") {
+                next.addEventListener('click', secondPageHandler)
+            }
+}
+
+function displayPageThree() {
+    line3.style.width = "100px"
+    line3.style.background = "#0456c8";
+    setTimeout(() => {
+        circle4.style.border = "2px solid #0456c8"
+        circle4.style.opacity = 1;
+        circle4.style.color = "white";
+        circle4.style.transition = "0.3s ease-in"
+        page3.style.display = "none";
+        page4.style.display = "flex";
+    }, 300)
+    next.style.opacity = 0.5;
 }
